@@ -157,18 +157,25 @@ header > a:hover {
     transform: scale(1.1);
 }
 
-.hamburger-menu {
+.hamburger-menu,
+.exit-btn {
     color: var(--primary-color);
     font-size: 2.8em;
     display: none;
     cursor: pointer;
 }
 
+.exit-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
 header nav a {
     margin-left: 40px;
     font-family: var(--mono-font);
     font-size: 0.8em;
-    transition: .0s ease;
 }
 
 header nav a:hover {
@@ -406,10 +413,40 @@ footer {
 
     .hamburger-menu {
         display: block;
+        text-align: right;
+    }
+    
+    nav li {
+        margin-bottom: 20px;
     }
 
-    nav {
+    header nav a {
+        margin-left: 0;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    header.flex ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(75vh, 400px);
+        justify-content: center;
+        align-items: center;
+        background: #112240;
         display: none;
+        opacity: 0;
+    }
+
+    header ul.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    ul.active + .exit-btn {
+        display: block;
     }
 
     /* Main */
