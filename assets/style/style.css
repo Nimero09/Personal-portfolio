@@ -157,6 +157,13 @@ header > a:hover {
     transform: scale(1.1);
 }
 
+.hamburger-menu {
+    color: var(--primary-color);
+    font-size: 2.8em;
+    display: none;
+    cursor: pointer;
+}
+
 header nav a {
     margin-left: 40px;
     font-family: var(--mono-font);
@@ -379,3 +386,104 @@ footer {
     font-size: 0.8em;
 }
 
+/* Media Queries */
+@media screen and (max-width: 900px) {
+    /* Global */
+    .container, #about {
+        padding-right: 50px;
+        padding-left: 50px
+    }
+
+    aside {
+        display: none;
+    }
+
+    header {
+        padding-right: 20px;
+        padding-left: 20px;
+        transition: .8s ease;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* Main */
+
+    main h1, main h2 {
+        font-size: 2em;
+    }
+
+    main p, section p {
+        width: 100%;
+    }
+
+    main button {
+        width: 100%;
+    }
+
+    main button:first-of-type {
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .about-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    #about img {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    /* Services */
+    .services-container {
+        flex-direction: column;
+    }
+
+    .services-container.flex section {
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .services-container section:first-child {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .services-container.flex section:last-child {
+        border-bottom: none;
+        border-bottom-left-radius: 10px;
+    }
+
+    /* Work */
+    .work-container {
+        flex-direction: column;
+        gap: 50px;
+        flex: 1;
+    }
+
+    #work section {
+        padding-bottom: 40px;
+    }
+
+    #work section img {
+        width: 100%;
+        object-fit: cover;
+        height: 50%;
+        object-position: 0% 0%;
+    }
+}
